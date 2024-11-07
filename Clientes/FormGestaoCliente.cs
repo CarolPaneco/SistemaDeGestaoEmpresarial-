@@ -53,10 +53,13 @@ namespace SistemaFazenda2
 
         private void btnAdicionarCliente_Click(object sender, EventArgs e)
         {
-            FormAdicionarCliente formAdicionar = new FormAdicionarCliente();
-            formAdicionar.FormClosed += (s, args) => CarregarClientes();
-            formAdicionar.Show();
+            FormAdicionarCliente adicionarCliente = new FormAdicionarCliente();
+            if (adicionarCliente.ShowDialog() == DialogResult.OK)
+            {
+                CarregarClientes();
+            }
         }
+
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
@@ -92,10 +95,10 @@ namespace SistemaFazenda2
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = "DELETE FROM Clientes WHERE cliente_id = @ClienteId";
+                string query = "DELETE FROM Clientes WHERE cliente_id = @clienteId";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@ClienteId", clienteId);
+                    command.Parameters.AddWithValue("@clienteId", clienteId);
                     command.ExecuteNonQuery();
                 }
             }

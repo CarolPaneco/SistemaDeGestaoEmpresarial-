@@ -10,6 +10,7 @@ namespace SistemaFazenda2
         private Button btnLogin;
         private Label lblUsuario;
         private Label lblSenha;
+        
 
         protected override void Dispose(bool disposing)
         {
@@ -54,6 +55,7 @@ namespace SistemaFazenda2
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
 
+
             // lblUsuario
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Arial", 14F);
@@ -61,6 +63,7 @@ namespace SistemaFazenda2
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(75, 22);
             this.lblUsuario.Text = "Usuário";
+
 
             // lblSenha
             this.lblSenha.AutoSize = true;

@@ -12,6 +12,7 @@ namespace SistemaFazenda2
         public FormLogin()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

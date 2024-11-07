@@ -70,6 +70,36 @@
       <DependentUpon>FormGestaoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\DatabaseConnection.cs" />
+    <Compile Include="Estoque\FormEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque\FormEstoque.Designer.cs">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompras.Designer.cs">
+      <DependentUpon>FormCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\FormAdicionarProduto1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormAdicionarProduto1.Designer.cs">
+      <DependentUpon>FormAdicionarProduto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\FormRelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormRelatorioVendas.Designer.cs">
+      <DependentUpon>FormRelatorioVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\FormSelecionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormSelecionarCliente.Designer.cs">
+      <DependentUpon>FormSelecionarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\FormAdicionarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,29 +118,17 @@
     <Compile Include="Fornecedor\FormAdicionarFornecedor.Designer.cs">
       <DependentUpon>FormAdicionarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item\FormAdicionarItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Item\FormAdicionarItem.Designer.cs">
-      <DependentUpon>FormAdicionarItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="Produtos\FormAdicionarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produtos\FormAdicionarProduto.Designer.cs">
       <DependentUpon>FormAdicionarProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAdmin.cs">
+    <Compile Include="Usuario\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdmin.Designer.cs">
+    <Compile Include="Usuario\FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormConfiguracoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormConfiguracoes.Designer.cs">
-      <DependentUpon>FormConfiguracoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Fornecedor\FormEditarFornecedor.cs">
       <SubType>Form</SubType>
@@ -118,35 +136,17 @@
     <Compile Include="Fornecedor\FormEditarFornecedor.Designer.cs">
       <DependentUpon>FormEditarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item\FormEditarItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Item\FormEditarItem.Designer.cs">
-      <DependentUpon>FormEditarItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="Produtos\FormEditarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produtos\FormEditarProduto.Designer.cs">
       <DependentUpon>FormEditarProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fornecedor\FormFornecedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Fornecedor\FormFornecedores.Designer.cs">
-      <DependentUpon>FormFornecedores.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fornecedor\FormGestaoFornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fornecedor\FormGestaoFornecedores.Designer.cs">
       <DependentUpon>FormGestaoFornecedores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Item\FormGestaoItens.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Item\FormGestaoItens.Designer.cs">
-      <DependentUpon>FormGestaoItens.cs</DependentUpon>
     </Compile>
     <Compile Include="Produtos\FormGestaoProdutos.cs">
       <SubType>Form</SubType>
@@ -166,48 +166,22 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormProdutos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Produtos\FormProdutos.Designer.cs">
-      <DependentUpon>FormProdutos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormRelatorioVendas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRelatorioVendas.Designer.cs">
-      <DependentUpon>FormRelatorioVendas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fornecedor\Fornecedor.cs" />
-    <Compile Include="Item\Item.cs" />
     <Compile Include="Produtos\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario\Usuario.cs" />
-    <Compile Include="Venda\FormAdicionarVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venda\FormAdicionarVenda.Designer.cs">
-      <DependentUpon>FormAdicionarVenda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Venda\FormEditarVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venda\FormEditarVenda.Designer.cs">
-      <DependentUpon>FormEditarVenda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Venda\FormGestaoVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venda\FormGestaoVenda.Designer.cs">
-      <DependentUpon>FormGestaoVenda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Venda\Venda.cs" />
-    <EmbeddedResource Include="FormConfiguracoes.resx">
-      <DependentUpon>FormConfiguracoes.cs</DependentUpon>
+    <EmbeddedResource Include="Estoque\FormEstoque.resx">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompras.resx">
+      <DependentUpon>FormCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornecedor\FormGestaoFornecedores.resx">
       <DependentUpon>FormGestaoFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\FormAdicionarProduto.resx">
+      <DependentUpon>FormAdicionarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produtos\FormEditarProduto.resx">
       <DependentUpon>FormEditarProduto.cs</DependentUpon>
@@ -221,9 +195,6 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorioVendas.resx">
-      <DependentUpon>FormRelatorioVendas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -233,6 +204,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Venda\FormSelecionarCliente.resx">
+      <DependentUpon>FormSelecionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

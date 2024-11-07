@@ -21,8 +21,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblPreco = new System.Windows.Forms.Label();
             this.txtPreco = new System.Windows.Forms.TextBox();
-            this.lblQuantidade = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -60,26 +58,10 @@
             this.txtPreco.Size = new System.Drawing.Size(300, 26);
             this.txtPreco.TabIndex = 5;
             // 
-            // lblQuantidade
-            // 
-            this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(30, 215);
-            this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(96, 20);
-            this.lblQuantidade.TabIndex = 6;
-            this.lblQuantidade.Text = "Quantidade:";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(30, 255);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(300, 26);
-            this.txtQuantidade.TabIndex = 7;
-            // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(30, 305);
+            this.lblDescricao.Location = new System.Drawing.Point(30, 218);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(84, 20);
             this.lblDescricao.TabIndex = 8;
@@ -87,7 +69,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(30, 340);
+            this.txtDescricao.Location = new System.Drawing.Point(30, 258);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(300, 100);
@@ -95,7 +77,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(30, 460);
+            this.btnSalvar.Location = new System.Drawing.Point(30, 389);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 30);
             this.btnSalvar.TabIndex = 10;
@@ -105,12 +87,10 @@
             // 
             // FormEditarProduto
             // 
-            this.ClientSize = new System.Drawing.Size(400, 520);
+            this.ClientSize = new System.Drawing.Size(400, 450);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
-            this.Controls.Add(this.txtQuantidade);
-            this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.txtNome);
@@ -128,8 +108,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.Label lblQuantidade;
-        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnSalvar;

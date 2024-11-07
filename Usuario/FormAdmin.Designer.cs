@@ -8,8 +8,6 @@
         private System.Windows.Forms.Button btnEditarUsuario;
         private System.Windows.Forms.Button btnExcluirUsuario;
         private System.Windows.Forms.Label lblTitulo;
-        
-
 
         protected override void Dispose(bool disposing)
         {
@@ -37,6 +35,7 @@
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(180, 26);
             this.lblTitulo.Text = "Administração";
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left;
 
             // 
             // listViewUsuarios
@@ -48,6 +47,7 @@
             this.listViewUsuarios.Columns.Add("ID", 50);
             this.listViewUsuarios.Columns.Add("Usuário", 150);
             this.listViewUsuarios.Columns.Add("Tipo", 100);
+            this.listViewUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
 
             // 
             // btnAdicionarUsuario
@@ -56,6 +56,7 @@
             this.btnAdicionarUsuario.Size = new System.Drawing.Size(100, 30);
             this.btnAdicionarUsuario.Text = "Adicionar";
             this.btnAdicionarUsuario.Click += new System.EventHandler(this.btnAdicionarUsuario_Click);
+            this.btnAdicionarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
 
             // 
             // btnEditarUsuario
@@ -64,6 +65,7 @@
             this.btnEditarUsuario.Size = new System.Drawing.Size(100, 30);
             this.btnEditarUsuario.Text = "Editar";
             this.btnEditarUsuario.Click += new System.EventHandler(this.btnEditarUsuario_Click);
+            this.btnEditarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
 
             // 
             // btnExcluirUsuario
@@ -72,6 +74,7 @@
             this.btnExcluirUsuario.Size = new System.Drawing.Size(100, 30);
             this.btnExcluirUsuario.Text = "Excluir";
             this.btnExcluirUsuario.Click += new System.EventHandler(this.btnExcluirUsuario_Click);
+            this.btnExcluirUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
 
             // 
             // FormAdmin
@@ -83,6 +86,7 @@
             this.Controls.Add(this.btnEditarUsuario);
             this.Controls.Add(this.btnExcluirUsuario);
             this.Text = "Administração de Usuários";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized; // Abre o formulário maximizado
         }
     }
 }

@@ -54,22 +54,6 @@ namespace SistemaFazenda2
             dataGridViewFornecedores.DataSource = fornecedores;
         }
 
-        private bool IsFormOpen<T>() where T : Form
-        {
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is T)
-                {
-                    return true; // O formulário já está aberto
-                }
-            }
-            return false; // O formulário não está aberto
-        }
-
-
-        
-
-        
 
         // Método para buscar o fornecedor no banco de dados
         private Fornecedor BuscarFornecedorPorId(int id)
@@ -166,6 +150,50 @@ namespace SistemaFazenda2
             {
                 MessageBox.Show("Selecione um fornecedor para remover.");
             }
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string termoPesquisa = txtPesquisa.Text.Trim();
+            List<Fornecedor> fornecedores = new List<Fornecedor>();
+            string connectionString = "Server=CONDLOC_123;Database=SistemaFazendaDB;Integrated Security=True;"; // Altere para a string de conexão do seu banco de dados
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Fornecedores WHERE nome LIKE @Termo OR cnpj_cpf LIKE @Termo"; // Ajuste para os campos que deseja buscar
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Termo", "%" + termoPesquisa + "%");
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Fornecedor fornecedor = new Fornecedor
+                            {
+                                fornecedor_id = (int)reader["fornecedor_id"],
+                                nome = reader["nome"].ToString(),
+                                cnpj_Cpf = reader["cnpj_cpf"].ToString(),
+                                endereco = reader["endereco"].ToString(),
+                                telefone = reader["telefone"].ToString(),
+                                email = reader["email"].ToString(),
+                                data_cadastro = reader["data_cadastro"] != DBNull.Value
+                                    ? (DateTime)reader["data_cadastro"]
+                                    : DateTime.MinValue
+                            };
+                            fornecedores.Add(fornecedor);
+                        }
+                    }
+                }
+            }
+
+            dataGridViewFornecedores.DataSource = fornecedores;
+        }
+
+        private void dataGridViewFornecedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
+using SistemaFazenda2;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using SistemaVenda;
 
 namespace SistemaFazenda2
 {
@@ -24,9 +26,9 @@ namespace SistemaFazenda2
         {
             if (tipoUsuario != "Administrador")
             {
-                // Oculta ou desabilita o botão de administração para não administradores
+
                 btnAdmin.Enabled = false;
-                
+
             }
         }
 
@@ -51,30 +53,42 @@ namespace SistemaFazenda2
 
         private void btnVendas_Click(object sender, EventArgs e)
         {
-            FormGestaoVenda formVendas = new FormGestaoVenda();
+            FormSelecionarCliente formVendas = new FormSelecionarCliente();
             formVendas.ShowDialog();
         }
 
-        private void btnRelatorios_Click(object sender, EventArgs e)
-        {
-            FormRelatorioVendas formRelatorios = new FormRelatorioVendas();
-            formRelatorios.ShowDialog();
-        }
+
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            // Somente administradores podem abrir o FormAdmin
-            if (tipoUsuario == "Administrador")
-            {
-                FormAdmin formAdmin = new FormAdmin();
-                formAdmin.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Acesso restrito a administradores.", "Permissão Negada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+
+
+            FormAdmin formAdmin = new FormAdmin();
+            formAdmin.ShowDialog();
+
+        }
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            FormEstoque formEstoque = new FormEstoque();
+            formEstoque.ShowDialog(); // Abre o formulário de estoque
         }
 
-        
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            FormCompras formCompras = new FormCompras();
+            formCompras.ShowDialog(); // Abre o formulário de estoque
+        }
+
+        private void btnRelatorio_Click(object sender, EventArgs e)
+        {
+            FormCompras formCompras = new FormCompras();
+            formCompras.ShowDialog(); // Abre o formulário de estoque
+        }
+
+        private void btnRelatorio_Click_1(object sender, EventArgs e)
+        {
+            FormRelatorioVendas formRelatorioVendas = new FormRelatorioVendas();
+            formRelatorioVendas.ShowDialog(); // Abre o formulário de estoque
+        }
     }
 }

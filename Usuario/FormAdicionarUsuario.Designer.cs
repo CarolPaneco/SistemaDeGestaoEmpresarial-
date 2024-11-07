@@ -15,6 +15,7 @@
 
         private void InitializeComponent()
         {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();

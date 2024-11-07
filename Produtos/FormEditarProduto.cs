@@ -8,97 +8,64 @@ namespace SistemaFazenda2
     {
         private int produtoId;
 
-        public FormEditarProduto(int id)
+        public FormEditarProduto(int produtoId)
         {
             InitializeComponent();
-            produtoId = id;
-            CarregarProduto();
+            this.produtoId = produtoId;
+            CarregarDadosProduto();
         }
 
-        private void CarregarProduto()
+        private void CarregarDadosProduto()
         {
-            Produto produto = BuscarProdutoPorId(produtoId);
-            if (produto != null)
-            {
-                txtNome.Text = produto.nome;
-                txtPreco.Text = produto.preco.ToString("F2");
-                txtQuantidade.Text = produto.quantidade.ToString();
-                txtDescricao.Text = produto.descricao;
-            }
-            else
-            {
-                MessageBox.Show("Produto não encontrado.");
-                this.Close();
-            }
-        }
-
-        private Produto BuscarProdutoPorId(int id)
-        {
-            Produto produto = null;
             string connectionString = "Server=CONDLOC_123;Database=SistemaFazendaDB;Integrated Security=True;";
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT * FROM Produtos WHERE produto_id = @Id";
+                string query = "SELECT nome, descricao, preco FROM Produtos WHERE produto_id = @ProdutoId";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@ProdutoId", produtoId);
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            produto = new Produto
-                            {
-                                produto_id = (int)reader["produto_id"],
-                                nome = reader["nome"].ToString(),
-                                preco = (decimal)reader["preco"],
-                                quantidade = (int)reader["quantidade"],
-                                descricao = reader["descricao"].ToString()
-                            };
+                            txtNome.Text = reader["nome"].ToString();
+                            txtDescricao.Text = reader["descricao"].ToString();
+                            txtPreco.Text = reader["preco"].ToString();
+                            
+                            
                         }
                     }
                 }
             }
-            return produto;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string nome = txtNome.Text;
-            decimal preco = decimal.Parse(txtPreco.Text);
-            int quantidade = int.Parse(txtQuantidade.Text);
-            string descricao = txtDescricao.Text;
-
             string connectionString = "Server=CONDLOC_123;Database=SistemaFazendaDB;Integrated Security=True;";
 
-            try
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string query = "UPDATE Produtos SET nome = @Nome, preco = @Preco, quantidade = @Quantidade, descricao = @Descricao WHERE produto_id = @Id";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Nome", nome);
-                        command.Parameters.AddWithValue("@Preco", preco);
-                        command.Parameters.AddWithValue("@Quantidade", quantidade);
-                        command.Parameters.AddWithValue("@Descricao", descricao);
-                        command.Parameters.AddWithValue("@Id", produtoId);
-                        command.ExecuteNonQuery();
-                    }
-                }
+                connection.Open();
+                string query = "UPDATE Produtos SET nome = @Nome, descricao = @Descricao, preco = @Preco WHERE produto_id = @ProdutoId";
 
-                MessageBox.Show("Produto atualizado com sucesso!");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProdutoId", produtoId);
+                    command.Parameters.AddWithValue("@Nome", txtNome.Text);
+                    command.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
+                    command.Parameters.AddWithValue("@Preco", decimal.Parse(txtPreco.Text));
+                    
+
+                    command.ExecuteNonQuery();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao atualizar produto: " + ex.Message);
-            }
+
+            MessageBox.Show("Produto atualizado com sucesso!");
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }
