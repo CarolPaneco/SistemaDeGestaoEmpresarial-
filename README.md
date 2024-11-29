@@ -11,7 +11,7 @@ Este projeto é um sistema de gestão empresarial desenvolvido para auxiliar na 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/CarolPaneco/SistemaDeGestaoEmpresarial.git
+   git clone https://github.com/CarolPaneco/SistemaDeGestaoEmpresarial-.git
 
 ## Uso
 
