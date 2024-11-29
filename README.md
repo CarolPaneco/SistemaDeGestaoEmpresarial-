@@ -1,11 +1,11 @@
 # SistemaDeGestaoEmpresarial-
 Este projeto é um sistema de gestão empresarial desenvolvido para auxiliar na administração de processos internos, como controle de vendas, produtos, fornecedores e clientes.
 ## Tabela de Conteúdos
-- [Descrição](#descrição)
+
 - [Instalação](#instalação)
 - [Uso](#uso)
 - [Contribuição](#contribuição)
-- [Licença](#licença)
+
 
 ## Instalação
 
